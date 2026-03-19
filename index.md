@@ -45,8 +45,8 @@ Property functions compute a value each time a binding is evaluated.
 
 | Category | Description |
 |----------|-------------|
-| [Components](/tasks/components) | Get root component and other component accessors |
-| [Utilities](/tasks/utilities) | Math, string conversion, and general value helpers |
+| [Components](/property-functions/components) | Get root component and other component accessors |
+| [Utilities](/property-functions/utilities) | Math, string conversion, and general value helpers |
 
 ---
 

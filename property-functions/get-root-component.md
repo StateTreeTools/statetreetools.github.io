@@ -21,4 +21,4 @@ The root scene component of the bound actor. This value is recomputed each time 
 
 ---
 
-[← Back to Components](/tasks/components) · [← Back to home](/)
+[← Back to Components](/property-functions/components) · [← Back to home](/)
