@@ -45,6 +45,19 @@ Receives the `UAudioComponent` that was created. Bind downstream tasks or condit
 
 ---
 
+## Unreal Engine Version Notes
+
+> ⚠️ **Recompile required when switching engine versions.** This task's tick behaviour differs between UE 5.5 and 5.6. Any StateTree containing Spawn Sound At Location must be recompiled in the target engine version for it to complete correctly.
+
+### UE 5.6 and later
+- Task completes asynchronously the instant the sound finishes — no per-frame tick is needed.
+- The `OnAudioFinished` callback fires and immediately signals task completion via the async execution context.
+
+### UE 5.5
+- Task completes via a per-frame tick that polls a shared completion flag set by the `OnAudioFinished` callback. There is a one-frame delay between the sound ending and the task completing.
+
+---
+
 ## Error Handling
 
 If the Sound asset is not set the task will fail at compile time. The task inherits **Error Means Failure** from `FStateTreeTools_TaskCommon`.

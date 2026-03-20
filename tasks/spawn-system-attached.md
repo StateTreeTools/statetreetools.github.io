@@ -59,6 +59,19 @@ Receives the `UNiagaraComponent` that was created. Bind downstream tasks or cond
 
 ---
 
+## Unreal Engine Version Notes
+
+> ⚠️ **Recompile required when switching engine versions.** This task's tick behaviour differs between UE 5.5 and 5.6. Any StateTree containing Spawn System Attached must be recompiled in the target engine version for it to complete correctly.
+
+### UE 5.6 and later
+- Task completes asynchronously the instant the Niagara system finishes — no per-frame tick is needed.
+- The `OnSystemFinished` callback fires and immediately signals task completion via the async execution context.
+
+### UE 5.5
+- Task completes via a per-frame tick that polls a shared completion flag set by the `OnSystemFinished` callback. There is a one-frame delay between the system finishing and the task completing.
+
+---
+
 ## Error Handling
 
 If the System Template is not set the task will fail at compile time. The task inherits **Error Means Failure** from `FStateTreeTools_TaskCommon`.

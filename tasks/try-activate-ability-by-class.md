@@ -36,6 +36,20 @@ When enabled the task cancels the tracked ability instance when the state exits 
 
 ---
 
+## Unreal Engine Version Notes
+
+> ⚠️ **Recompile required when switching engine versions.** This task's tick behaviour differs between UE 5.5 and 5.6. Any StateTree containing Try Activate Ability By Class must be recompiled in the target engine version for it to complete correctly.
+
+### UE 5.6 and later
+- Task completes asynchronously the instant the ability ends — no per-frame tick is needed.
+- The `OnAbilityEnded` callback fires and immediately signals task completion via the async execution context.
+- The timeout timer (when enabled) also uses the async execution context to complete immediately.
+
+### UE 5.5
+- Task completes via a per-frame tick that polls a shared result flag set by the `OnAbilityEnded` callback or the timeout timer. There is a one-frame delay between the ability ending and the task completing.
+
+---
+
 ## Error Handling
 
 If the actor has no Ability System Component, the ability class is invalid, or the ability uses the `NonInstanced` policy, the task will fail. You can control whether a failure causes the task to return **Failed** or **Succeeded** using the **Error Means Failure** option inherited from `FStateTreeTools_TaskCommon`.
