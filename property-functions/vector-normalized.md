@@ -19,6 +19,10 @@ The vector to normalize.
 ### Result
 A unit vector pointing in the same direction as **Vector**, or a zero vector if **Vector** has zero length.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Vector](/property-functions/math-vector) · [← Back to home](/)

@@ -16,6 +16,10 @@ Returns the mathematical constant τ (tau), equal to 2π (approximately `6.28318
 ### Result
 The value of τ (2π) as a float.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Float](/property-functions/math-float) · [← Back to home](/)

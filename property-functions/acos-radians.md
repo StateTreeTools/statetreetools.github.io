@@ -19,6 +19,10 @@ The cosine value to invert. Must be in `[-1, 1]`.
 ### Result
 The arccosine of **Value** in radians, in the range `[0, π]`.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Float](/property-functions/math-float) · [← Back to home](/)

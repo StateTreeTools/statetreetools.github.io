@@ -22,6 +22,10 @@ The `FGameplayAttribute` to read. Select the attribute from the picker in the de
 ### AttributeValue
 The current modified value of **Attribute** on **Actor**'s Ability System Component.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Gameplay Attributes](/property-functions/gameplay-attributes) · [← Back to home](/)

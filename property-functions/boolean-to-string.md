@@ -19,6 +19,10 @@ The boolean value to convert.
 ### Result
 `"true"` if **Value** is `true`, or `"false"` if **Value** is `false`.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Utilities](/property-functions/utilities) · [← Back to home](/)

@@ -29,16 +29,16 @@ A `FStateTreeTools_OutputEventAction` that configures an optional StateTree even
 
 ## Unreal Engine Version Notes
 
-> ⚠️ **Recompile required when switching engine versions.** This task's tick behaviour and completion tracking differ between UE 5.5 and 5.6. Any StateTree containing Wait For Gameplay Tag Added must be recompiled in the target engine version for it to behave correctly.
-
 ### UE 5.6 and later
 - Task completes asynchronously the instant the tag is added — no per-frame tick is needed.
 - The **On Tag Changed** delegate dispatcher fires at the exact moment the tag change is detected.
 - The **Output Event** is dispatched immediately when the callback fires.
 - The task is not considered for completion tracking (`bConsideredForCompletion = false`); completion is driven entirely by the async callback.
+- Any StateTree compiled in UE 5.5 must be recompiled after upgrading to 5.6 for correct behaviour.
 
 ### UE 5.5
 - Task completes via a per-frame tick that polls a shared flag set by the tag-change callback. There is a one-frame delay between the tag being added and the task completing.
+- Any StateTree compiled in UE 5.6 must be recompiled after downgrading to 5.5 for correct behaviour.
 - The **On Tag Changed** delegate dispatcher output appears in the details panel but is non-functional — `FStateTreeDelegateDispatcher` does not exist before UE 5.6 and the field compiles as a no-op placeholder.
 - The **Output Event** still dispatches its configured StateTree event (fired from the tick).
 - The task uses standard completion tracking (`bConsideredForCompletion = true`).

@@ -19,6 +19,10 @@ The float to extract the fractional part from.
 ### Result
 The fractional portion of **Value**, always in the range `[0, 1)`.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Float](/property-functions/math-float) · [← Back to home](/)

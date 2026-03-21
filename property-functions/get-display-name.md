@@ -19,6 +19,10 @@ The actor whose display name to retrieve. Bind this to the actor you want to nam
 ### Result
 The display name of **Object** as a string.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Utilities](/property-functions/utilities) · [← Back to home](/)

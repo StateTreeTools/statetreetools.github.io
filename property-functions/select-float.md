@@ -25,6 +25,10 @@ The selector. When `true`, **Left** is returned; when `false`, **Right** is retu
 ### Result
 Either **Left** or **Right** depending on **bPickLeft**.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Float](/property-functions/math-float) · [← Back to home](/)

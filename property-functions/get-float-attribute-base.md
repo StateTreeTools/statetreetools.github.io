@@ -22,6 +22,10 @@ The `FGameplayAttribute` to read. Select the attribute from the picker in the de
 ### AttributeValue
 The base value of **Attribute** on **Actor**'s Ability System Component, before transient modifiers are applied.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Gameplay Attributes](/property-functions/gameplay-attributes) · [← Back to home](/)

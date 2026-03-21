@@ -56,15 +56,15 @@ Fires when the montage finishes blending in and is fully active. Configure the `
 
 ## Unreal Engine Version Notes
 
-> ⚠️ **Recompile required when switching engine versions.** This task's tick behaviour differs between UE 5.5 and 5.6. Any StateTree containing Play Montage must be recompiled in the target engine version for it to complete correctly.
-
 ### UE 5.6 and later
 - Task completes asynchronously the instant the montage ends — no per-frame tick is needed.
 - All four delegate dispatcher outputs (**On Completed**, **On Interrupted**, **On Blend Out**, **On Blended In**) fire at the exact moment each montage lifecycle event occurs.
 - All four `OutputEventAction` fields dispatch their configured StateTree events immediately when each callback fires.
+- Any StateTree compiled in UE 5.5 must be recompiled after upgrading to 5.6 for correct behaviour.
 
 ### UE 5.5
 - Task completes via a per-frame tick that polls a shared completion flag. There is a one-frame delay between the montage ending and the task completing.
+- Any StateTree compiled in UE 5.6 must be recompiled after downgrading to 5.5 for correct behaviour.
 - **Delegate dispatcher outputs** (**On Completed**, **On Interrupted**, **On Blend Out**, **On Blended In**) appear in the details panel but are non-functional — `FStateTreeDelegateDispatcher` does not exist before UE 5.6 and these fields compile as no-op placeholders.
 - **On Completed Event** and **On Interrupted Event** still dispatch their configured StateTree events (fired from the tick).
 - **On Blend Out Event** and **On Blended In Event** do **not** fire on UE 5.5. These callbacks are not tracked in the 5.5 code path.

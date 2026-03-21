@@ -56,13 +56,13 @@ If enabled, the task automatically fails after **Timeout Seconds** if `Finish Ac
 
 ## Unreal Engine Version Notes
 
-> ⚠️ **Recompile required when switching engine versions.** This task's tick behaviour differs between UE 5.5 and 5.6. Any StateTree containing Start Action And Wait must be recompiled in the target engine version for it to complete correctly.
-
 ### UE 5.6 and later
 - When your Blueprint calls `Finish Action`, the task completes immediately in the same frame via the async execution context. No per-frame tick is needed.
+- Any StateTree compiled in 5.5 must be recompiled after upgrading to 5.6 for correct behaviour.
 
 ### UE 5.5
 - Task completes via a per-frame tick that polls a shared result flag set when `Finish Action` is called. There is a one-frame delay between the `Finish Action` call and the task completing.
+- Any StateTree compiled in 5.6 must be recompiled after downgrading to 5.5 for correct behaviour.
 
 ---
 

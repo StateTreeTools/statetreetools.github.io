@@ -19,6 +19,10 @@ The float value to extract the sign from.
 ### Result
 `-1`, `0`, or `1` depending on whether **Value** is negative, zero, or positive.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Float](/property-functions/math-float) · [← Back to home](/)

@@ -35,6 +35,10 @@ The output parameter of the function to read. This is usually `ReturnValue` for 
 ### Value
 The `FString` result returned by the called function.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Call Pure Function](/property-functions/call-pure-function) · [← Back to home](/)

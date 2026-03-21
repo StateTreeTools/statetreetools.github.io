@@ -19,6 +19,10 @@ The integer value to convert.
 ### Result
 The string representation of **Value**.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Utilities](/property-functions/utilities) · [← Back to home](/)

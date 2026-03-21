@@ -19,6 +19,10 @@ Bind this to the actor whose root component you want to retrieve.
 ### Output
 The root scene component of the bound actor. This value is recomputed each time the binding is evaluated.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Components](/property-functions/components) · [← Back to home](/)

@@ -22,6 +22,10 @@ The second vector.
 ### Result
 The dot product of **Left** and **Right** as a float.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Vector](/property-functions/math-vector) · [← Back to home](/)

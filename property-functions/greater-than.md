@@ -22,6 +22,10 @@ The value on the right-hand side of the comparison.
 ### Result
 `true` if **Left** > **Right**, otherwise `false`.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Float](/property-functions/math-float) · [← Back to home](/)

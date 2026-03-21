@@ -25,6 +25,10 @@ The upper angular bound in degrees. Defaults to `360`.
 ### Result
 **AngleDegrees** constrained to `[MinAngleDegrees, MaxAngleDegrees]`.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Float](/property-functions/math-float) · [← Back to home](/)

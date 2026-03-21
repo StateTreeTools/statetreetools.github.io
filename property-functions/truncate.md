@@ -19,6 +19,10 @@ The float value to truncate.
 ### Result
 The integer part of **Value**, with the fractional portion discarded.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Float](/property-functions/math-float) · [← Back to home](/)

@@ -25,6 +25,10 @@ The upper bound of the input range. Defaults to `1`.
 ### Result
 `(Value - RangeMin) / (RangeMax - RangeMin)`, representing **Value**'s position within the range.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Float](/property-functions/math-float) · [← Back to home](/)

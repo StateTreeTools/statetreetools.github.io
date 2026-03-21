@@ -19,6 +19,10 @@ The tangent value to invert.
 ### Result
 The arctangent of **Value** in radians, in the range `(-π/2, π/2)`.
 
+## Unreal Engine Version Notes
+
+Property functions are not available in UE 5.4. This node requires **UE 5.5 or later**.
+
 ---
 
 [← Back to Math \| Float](/property-functions/math-float) · [← Back to home](/)
