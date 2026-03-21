@@ -6,14 +6,14 @@ title: Getting Started
 
 ## Supported Versions
 
-StateTree Tools supports Unreal Engine 5.4, 5.5, and 5.6. Most features are available on all supported versions.
+StateTree Tools supports Unreal Engine 5.1 through 5.7. Most features are available on all supported versions.
 
-| Feature | UE 5.4 | UE 5.5 | UE 5.6 |
-|---------|--------|--------|--------|
-| Tasks | ✓ | ✓ | ✓ |
-| Conditions | ✓ | ✓ | ✓ |
-| Components | ✓ | ✓ | ✓ |
-| Property Functions | — | ✓ | ✓ |
+| Feature | UE 5.1 | UE 5.2 | UE 5.3 | UE 5.4 | UE 5.5 | UE 5.6 | UE 5.7 |
+|---------|--------|--------|--------|--------|--------|--------|--------|
+| Tasks | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Conditions | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Components | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Property Functions | — | — | — | — | ✓ | ✓ | ✓ |
 
 ---
 

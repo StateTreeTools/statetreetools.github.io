@@ -27,7 +27,9 @@ Fired by `OnTargetPerceptionUpdated`. The event payload is `FTargetPerceptionUpd
 
 ### `StateTreeTools.Events.Perception.TargetForgotten`
 
-Fired by `OnTargetPerceptionForgotten`. The event payload is `FTargetPerceptionForgottenPayload`:
+Fired by `OnTargetPerceptionForgotten`. The event payload is `FTargetPerceptionForgottenPayload`.
+
+> **Requires UE 5.2 or later.** The `OnTargetPerceptionForgotten` delegate was added to `UAIPerceptionComponent` in UE 5.2. On UE 5.1 only `TargetUpdated` events are fired.
 
 | Field | Type | Description |
 |-------|------|-------------|
