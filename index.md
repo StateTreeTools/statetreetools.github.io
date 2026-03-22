@@ -14,6 +14,12 @@ Install the plugin, enable it in your project, and set up your first StateTree u
 
 ---
 
+## [Building from Source](/building-from-source)
+
+Instructions for contributors building the plugin from the source repository, including the one-time environment setup required for UE 5.5 and earlier.
+
+---
+
 ## [Showcase](/showcase)
 
 Examples of what you can build with StateTree Tools — patrol AI, perception-driven behaviour, ability-driven state machines, and more.
