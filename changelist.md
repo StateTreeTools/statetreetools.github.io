@@ -4,7 +4,7 @@ title: Changelist
 
 # Changelist
 
-## Version 2.0 (Development Branch)
+## Version 2.0
 
 ### Tasks
 
