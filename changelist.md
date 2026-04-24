@@ -4,6 +4,35 @@ title: Changelist
 
 # Changelist
 
+## Version 3.0 (Development Branch)
+
+### Documentation
+
+- [Create Widget](/tasks/create-widget)
+  Documented the widget lifetime and scope caveat more clearly: on supported engine versions the task completes when the `UUserWidget` is actually destroyed, not merely when it is removed from the viewport, so external strong references can keep it alive and leave the task Running off-screen.
+
+### Tasks
+
+- [CallEvent](/tasks/call-event)
+  Added a Utilities | Events task for calling supported static `BlueprintCallable` functions without needing an actor or component target. Supports the standard enter/exit firing options, hides world-context parameters when the engine can provide them automatically, and describes calls using `Class::Function(...)`.
+
+- [WaitForWidgetDelegate](/tasks/wait-for-widget-delegate)
+  Added a UI task that waits for one Blueprint-assignable multicast delegate on a bound widget, publishes supported payload values into fixed generic outputs, and completes without ticking. Like [WaitForDelegate](/tasks/wait-for-delegate), it requires the owning StateTree to keep ticking so transitions can be processed.
+
+### Editor and UX Improvements
+
+- Better generated node descriptions
+  Improved generated descriptions across call, set, delegate, widget, and action nodes so the displayed summaries are more informative.
+
+- Richer [SetActorProperty](/tasks/set-actor-property) descriptions
+  SetActorProperty descriptions now include both the actor expression and the value expression instead of collapsing that detail out of the summary.
+
+- Bound values no longer show up as `None` in generated descriptions
+  Fixed several cases where a parameter was correctly bound but the generated task description still printed `None` instead of the bound expression.
+
+- Improved search filtering in editor dropdowns
+  Updated the searchable pickers across the editor customizations to use a better text filter, making it easier to find functions, delegates, properties, widgets, and similar entries.
+
 ## Version 2.0
 
 ### Documentation
