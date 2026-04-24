@@ -35,14 +35,20 @@ Only shown when **Add To Viewport** is enabled. Higher values appear in front of
 When enabled, the task calls `RemoveFromParent()` on the created widget when the state exits.
 
 ### Widget
-Output reference to the created widget.
+Output reference to the created widget. Other StateTree nodes or game code can bind this output. **If something else keeps a strong reference** to the same `UUserWidget` instance, the object can remain allocated even when it is not shown in the viewport.
 
 ---
 
 ## Runtime Behaviour
 
 ### UE 5.6 and later
-The task creates the widget and then stays running until the widget is destroyed. It completes asynchronously without using per-frame tick.
+The task creates the widget and then **stays running** until the **`UUserWidget` is destroyed** (the engine calls `OnNativeDestruct` / `Destruct` as part of teardown). It completes asynchronously without using per-frame tick.
+
+**Completion is not the same as “removed from screen.”** Taking the widget out of the viewport — for example with `RemoveFromParent`, or clearing the slot that held it — **does not necessarily destroy** the `UUserWidget`. It is a `UObject`; if **any** strong reference remains (another `UObject` field, a stored `TObjectPtr`, a Blueprint variable, a delegate that pins the object, etc.), the instance can stay **alive off-screen** while your task is still **Running**, because destruction (and thus the normal completion path for this task) has not happened yet.
+
+**Practical guidance:**
+- Clear or avoid long-lived strong references to the output widget when the UI should be fully dismissed, or use **weak** references (`TWeakObjectPtr`) from consumers that only need to test validity.
+- If you must not rely on destruction timing, drive state completion with an **explicit** signal (e.g. a button callback or custom event) instead of assuming the task will finish as soon as the widget disappears from the viewport.
 
 ### UE 5.5 and earlier
 The task creates the widget and succeeds immediately after creation. Earlier StateTree versions do not support the same async completion path used by newer engine versions.

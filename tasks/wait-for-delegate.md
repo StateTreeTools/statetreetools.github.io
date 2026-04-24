@@ -12,6 +12,12 @@ Waits for one Blueprint-assignable multicast delegate on an actor or one of its 
 
 WaitForDelegate does not tick. On Unreal versions where StateTree supports async task completion, it stays active and is considered for state completion until the delegate fires.
 
+> ⚠️ **StateTree tick required**
+>
+> WaitForDelegate and WaitForWidgetDelegate only work if the owning StateTree keeps ticking.
+> These tasks complete asynchronously, but transition processing still happens inside StateTree update passes.
+> If the StateTree is not ticking (for example while paused without tick-when-paused), the delegate can fire and the task can mark completion, but transitions will not be processed.
+
 ---
 
 ## Configuration

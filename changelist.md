@@ -6,6 +6,11 @@ title: Changelist
 
 ## Version 2.0
 
+### Documentation
+
+- [Create Widget](/tasks/create-widget)
+  Documented UObject lifetime vs viewport removal on UE 5.6+: the task completes when the `UUserWidget` is destroyed (`OnNativeDestruct`), not merely when it is removed from the hierarchy; external **strong** references to the widget can keep it alive off-screen and leave the task **Running** until the last reference is released (or the object is otherwise torn down).
+
 ### Tasks
 
 - [AddMappingContext](/tasks/add-mapping-context), [RemoveMappingContext](/tasks/remove-mapping-context)
@@ -33,6 +38,7 @@ title: Changelist
 
 - [WaitForDelegate](/tasks/wait-for-delegate)
   Added an event task that waits for one Blueprint-assignable multicast delegate on an actor or component, publishes supported payload values into fixed generic outputs, and completes without ticking. The task shows a read-only **Delegate Outputs Used** legend so users can see exactly which payload parameters map to outputs.
+  Added an explicit warning that WaitForDelegate and WaitForWidgetDelegate require the owning StateTree to keep ticking; if the StateTree is not ticking (for example while paused without tick-when-paused), delegate fires do not get processed into transitions.
 
 - [CallComponentDelegate](/tasks/call-component-delegate)
   Added a task for broadcasting Blueprint-assignable multicast delegates directly on a bound actor component, with the same delegate input workflow as [CallActorDelegate](/tasks/call-actor-delegate).
