@@ -22,7 +22,7 @@ Set this to the class that owns the static function you want to call.
 ### Event Name
 Select the function to call from the dropdown. Only static, non-editor-only, non-pure `BlueprintCallable` functions with supported input parameters are shown.
 
-Functions that take a world context parameter hide that parameter from the generated inputs when the engine can supply it automatically.
+Functions that take a world context parameter hide that parameter from the generated inputs when the engine can supply it automatically. This includes script-generated hidden world-context parameters.
 
 ### Parameters
 Auto-populated when **Event Name** is selected. One field appears per supported input parameter of the chosen function. Fill in or bind each field as needed.

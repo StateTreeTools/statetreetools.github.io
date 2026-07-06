@@ -38,6 +38,19 @@ When both enter and exit firing are enabled, the action fires twice: once on ent
 
 ---
 
+## State Completion Behaviour
+
+StateTree Tools separates tasks into two completion styles:
+
+| Style | Behaviour | Examples |
+|-------|-----------|----------|
+| **Completion-aware wait tasks** | Stay **Running** until the external operation they started or subscribed to finishes. On UE 5.8+, these tasks participate in StateTree's native task-completion tracking, so **On State Completed** transitions can advance when the waited operation completes. | StartActionAndWait, PlayMontage, SpawnSound2D, SpawnSoundAtLocation, SpawnSystemAtLocation, SpawnSystemAttached, Create Widget, TryActivateAbilityByClass, WaitForDelegate, WaitForWidgetDelegate, Wait For Gameplay Tag Added/Removed |
+| **Instant side-effect tasks** | Fire once and immediately succeed. They do not hold the state open and are not treated as completion-relevant tasks. | CallActorEvent, CallComponentEvent, CallActorDelegate, CallComponentDelegate, SetActorProperty, SetComponentProperty, SendStateTreeEvent, PlaySound2D, PlaySoundAtLocation, input-mode tasks, debug helpers |
+
+A useful rule of thumb: if StateTree Tools can observe the thing ending, the task can be completion-aware. If the engine API only fires a one-shot side effect and gives the task nothing to observe, the task remains instant.
+
+This matters most for **On State Completed** transitions in parent or leaf states. Use completion-aware tasks when the state should wait for work to finish; use instant tasks when the state should just perform a side effect and let another condition, delegate, event, or transition decide what happens next.
+
 ## At a Glance
 
 The task's label in the StateTree editor reflects the current setting:

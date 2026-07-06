@@ -33,7 +33,7 @@ A `FStateTreeTools_OutputEventAction` that configures an optional StateTree even
 - Task completes asynchronously the instant the tag is added — no per-frame tick is needed.
 - The **On Tag Changed** delegate dispatcher fires at the exact moment the tag change is detected.
 - The **Output Event** is dispatched immediately when the callback fires.
-- The task is not considered for completion tracking (`bConsideredForCompletion = false`); completion is driven entirely by the async callback.
+- The task is considered for StateTree completion tracking and finishes from the async callback, so **On State Completed** transitions can advance when the tag change is detected.
 - Any StateTree compiled in UE 5.5 must be recompiled after upgrading to 5.6 for correct behaviour.
 
 ### UE 5.5

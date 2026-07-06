@@ -21,7 +21,7 @@ If the state is exited before the Blueprint finishes, because a higher-priority 
 
 ## Setting Up the Blueprint Event
 
-Your Blueprint event must have `FStateTreeTools_ActionPayload` as its **first parameter**. Only events with this signature appear in the Event Name dropdown.
+Your Blueprint event must have `FStateTreeTools_ActionPayload` as its first user-authored parameter. Engine-supplied world-context parameters are ignored for this check and are not shown as configurable inputs. Only events with this signature appear in the Event Name dropdown.
 
 Inside the event:
 
