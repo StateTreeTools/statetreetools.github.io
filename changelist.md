@@ -28,6 +28,16 @@ title: Changelist
 - [WaitForWidgetDelegate](/tasks/wait-for-widget-delegate)
   Added a UI task that waits for one Blueprint-assignable multicast delegate on a bound widget, publishes supported payload values into fixed generic outputs, and completes without ticking. Like [WaitForDelegate](/tasks/wait-for-delegate), it requires the owning StateTree to keep ticking so transitions can be processed.
 
+### Property Functions
+
+- [GetGameMode](/property-functions/get-game-mode) *(Game category)*
+  Added a property function that mirrors Unreal's Blueprint Get Game Mode node and returns the current world's `AGameModeBase`.
+
+### Compatibility
+
+- Unreal Engine 5.8 support
+  Added UE 5.8 build support and removed the deprecated `StructUtils` plugin dependency warning on newer engine versions.
+
 ### Editor and UX Improvements
 
 - Better generated node descriptions

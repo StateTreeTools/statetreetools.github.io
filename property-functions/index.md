@@ -11,6 +11,7 @@ Property functions compute a value each time a binding is evaluated. They can be
 | Category | Description |
 |----------|-------------|
 | [Components](/property-functions/components) | Get root component and other component accessors |
+| [Game](/property-functions/game) | Access game-level objects such as player controllers and game modes |
 | [UI](/property-functions/ui) | Get widget-specific values such as animations |
 | [Utilities](/property-functions/utilities) | Math, string conversion, and general value helpers |
 
